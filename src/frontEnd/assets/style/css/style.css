@@ -1,0 +1,236 @@
+/*Section for background image*/
+html{
+	background-image: url(../../images/background.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+}
+
+/*Style for allContainer class. Move container to center of screen*/
+.allContainer{
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    width: 1500px;
+    height:3000px;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    margin-left: -750px;
+    top: 0;
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    
+}
+
+/*Style for navigation bar. Place class in cenber above everything
+Also ensure that the navBar will be always seen even when scrolling from position*/
+.navBar{
+    display: -webkit-flex;
+    display: flex;
+    background-color: #046a38;
+    position: fixed;
+    width: 1500px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    margin-left: -749px;
+    top: 0;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+/*Style for logo section. Ensure proper spacing in general and seperate the navBar into
+logosection and button section*/
+.logoSection{
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    display: flex;
+    margin-left: 20px;
+    width: 750px;
+    height: 100px;
+}
+
+/*Style for BRIC Now caption*/
+.caption{
+    display: -webkit-flex;
+    display: flex;
+    margin-left: 10px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px;
+    font-size: 5em;
+    text-decoration: none;
+}
+
+/*Style for team logo*/
+img.logoImage{
+    display: -webkit-flex;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+
+}
+
+/*Style for button section. Moves button section to right half of navigation bar*/
+.menuButtonContainer{
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    margin-right: 20px;
+    float: right;
+    width: 750px;
+}
+
+/*Navigation button style */
+.menuButtonStyle{
+    background-color: white;
+    color: #31A6FF; 
+    border: 2px solid #31A6FF;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-family:"proxima nova", Arial;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 2px;
+    width: 120px;
+}
+
+/*Navigation button style when a mouse is hovering over button. Adds color change and shadow*/
+.menuButtonStyle:hover {
+    background-color: #31A6FF;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*Style that address the area around the button such as margin and button placement*/
+.menuButton{
+    display: -webkit-flex;
+    display: flex;
+    position:relative;
+    display: inline-block;
+    right: 5px;
+    margin-right: 10px;
+    left: 490px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px;
+}
+
+/*Style for header.*/
+.headerContainer{
+    display: -webkit-flex;
+    display: flex;
+    background-color: #cc8a00;
+    border-bottom: 1px solid black;
+    width: 1500px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -750px;
+    top: 100px;
+}
+
+/*Style for the message within the header*/
+.welcomeMessage{
+    display: -webkit-flex;
+    display: flex;
+   font-size: 3em;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+/*Style for the footer at bottom of page.*/
+.footerContainer{
+    display: -webkit-flex;
+    display: flex;
+    height: 200px;
+    position: absolute;
+    top: 3000px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:#1e1b18;
+    text-align: center;
+    border-top: 1px solid black;
+    color: white;
+}
+
+/*Style for the box that contain the footer links*/
+.footerLinkContainer{
+    position: absolute;
+    left: 50%;
+    width: 1500px;
+    margin-left: -750px;
+    text-align: center;
+}
+
+/*Style that changes color of the links. (Changes color from purpe/underlined to white/no underline*/
+.footerLink{
+    color: white;
+    text-decoration: none;
+}
+
+/*Copyright section at bottom of footer.*/
+.copyright{
+    position: absolute;
+    width: 1500px;
+    height: 30px;
+    margin-left: -750px;
+    top: 85%;
+    left: 50%;
+    text-align: center;
+}
+
+/*Contains the copyright image and comment*/
+.copyrightContainer{
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    left: 680px;
+    text-align: center;
+    
+}
+
+/*Style for copyright image*/
+img.copyrightImage{
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    float: left;
+    clear: left;
+    line-height: 30px;
+    vertical-align: middle;
+    top: 1px;
+}
+
+/*Style for copyright message*/
+.copyrightMessage{
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    padding-left: 23px; 
+    text-align: center;
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
