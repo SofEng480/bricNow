@@ -1,6 +1,10 @@
-/*Section for background image*/
-html{
-	background-image: url(../../images/background.jpg);
+body{
+    margin: 0;
+}
+
+/*Style for contanining picture*/
+.pictureContainer{
+    background-image: url(../../images/background.jpg);
 	background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -8,16 +12,13 @@ html{
 }
 
 /*Style for allContainer class. Move container to center of screen*/
-.allContainer{
+.contentContainer{
     display: -webkit-flex;
     display: flex;
-    position: absolute;
-    width: 1500px;
     height:3000px;
-    margin: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 0;
-    left: 50%;
-    margin-left: -750px;
     top: 0;
     background-color: white;
     border-left: 1px solid black;
@@ -32,15 +33,12 @@ Also ensure that the navBar will be always seen even when scrolling from positio
     display: flex;
     background-color: #046a38;
     position: fixed;
-    width: 1500px;
+    width: 80%;
     height: 100px;
-    margin: 0;
-    padding: 0;
-    left: 50%;
-    margin-left: -749px;
     top: 0;
     border-bottom: 1px solid black;
     z-index: 1;
+    overflow: auto;
 }
 
 /*Style for logo section. Ensure proper spacing in general and seperate the navBar into
@@ -50,8 +48,7 @@ logosection and button section*/
     display: flex;
     position: relative;
     display: flex;
-    margin-left: 20px;
-    width: 750px;
+    width: 80%;
     height: 100px;
 }
 
@@ -75,6 +72,7 @@ img.logoImage{
     height: 100px;
     width: 100px;
     margin-right: 10px;
+    margin-left: 20px;
 
 }
 
@@ -82,10 +80,8 @@ img.logoImage{
 .menuButtonContainer{
     display: -webkit-flex;
     display: flex;
-    position: relative;
-    margin-right: 20px;
-    float: right;
-    width: 750px;
+    margin-left: 20px;
+
 }
 
 /*Navigation button style */
@@ -115,11 +111,10 @@ img.logoImage{
 .menuButton{
     display: -webkit-flex;
     display: flex;
+    float: right;
     position:relative;
     display: inline-block;
-    right: 5px;
-    margin-right: 10px;
-    left: 490px;
+    margin-left: 10px;
     vertical-align: middle;
     text-align: center;
     line-height: 100px;
@@ -131,14 +126,13 @@ img.logoImage{
     display: flex;
     background-color: #cc8a00;
     border-bottom: 1px solid black;
-    width: 1500px;
+    width: 100%;
     height: 100px;
     margin: 0;
     padding: 0;
-    position: absolute;
-    left: 50%;
-    margin-left: -750px;
+    position: relative;
     top: 100px;
+    overflow: auto;
 }
 
 /*Style for the message within the header*/
@@ -150,7 +144,6 @@ img.logoImage{
     vertical-align: middle;
     text-align: center;
     line-height: 100px;
-    height: 100px;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 20px;
@@ -158,10 +151,8 @@ img.logoImage{
 
 /*Style for the footer at bottom of page.*/
 .footerContainer{
-    display: -webkit-flex;
-    display: flex;
-    height: 200px;
-    position: absolute;
+    height: 210px;
+    width: 100%;
     top: 3000px;
     right: 0;
     bottom: 0;
@@ -169,15 +160,12 @@ img.logoImage{
     background-color:#1e1b18;
     text-align: center;
     border-top: 1px solid black;
+    margin-bottom: 0;
     color: white;
 }
 
 /*Style for the box that contain the footer links*/
 .footerLinkContainer{
-    position: absolute;
-    left: 50%;
-    width: 1500px;
-    margin-left: -750px;
     text-align: center;
 }
 
@@ -189,48 +177,9 @@ img.logoImage{
 
 /*Copyright section at bottom of footer.*/
 .copyright{
-    position: absolute;
-    width: 1500px;
-    height: 30px;
-    margin-left: -750px;
-    top: 85%;
-    left: 50%;
-    text-align: center;
-}
-
-/*Contains the copyright image and comment*/
-.copyrightContainer{
-    width: 150px;
-    height: 30px;
-    position: absolute;
-    left: 680px;
-    text-align: center;
-    
-}
-
-/*Style for copyright image*/
-img.copyrightImage{
-    display: -webkit-flex;
-    display: flex;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    float: left;
-    clear: left;
-    line-height: 30px;
+    margin-top: 60px;
     vertical-align: middle;
-    top: 1px;
-}
-
-/*Style for copyright message*/
-.copyrightMessage{
-    display: -webkit-flex;
-    display: flex;
-    position: absolute;
-    padding-left: 23px; 
     text-align: center;
     line-height: 30px;
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 8pt;
 }
