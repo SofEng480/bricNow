@@ -10,9 +10,7 @@
     
     <body>
         <!-- The pictureContainer class contains picture and the contentContainer class -->
-        <div class = pictureContainer>
-            <!-- The allContainer class contains all other classes besides footer -->
-            <div class = contentContainer>
+        <div class = pictureContainer>   
                 <!-- navBar class contains team logo, project name as well as  sign-up/login button. The navBar class exist to seperate the logo section and the button section -->
                 <div class = "navBar">
                         <!-- logoSection class contains team logo(navBar-logo) and the project name(caption)- It also links to our team site by clicking on logo and back to Bric Now main page by clicking on BRIC Now -->
@@ -38,20 +36,35 @@
                         </div>          
                     </div>
                 </div>
-
+            
                 <!-- headerContainer class contains welcoming message. -->
                 <div class ="headerContainer">
                     <h3 class = welcomeMessage>Welcome to Bric Now!</h3>
-                </div>
+                </div>            
+            
+            <!-- The contentContainer class contains the actual graphs -->
+            <div class = contentContainer>
+                <div class=container>
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'bricNow')" id = "default">BRIC Now</button>
+                        <button class="tablinks" onclick="openTab(event, 'bricLater')">BRIC Later</button>
+                        <button class="tablinks" onclick="openTab(event, 'bricCapacity')">BRIC Capacity</button>
+                    </div>
+
+                    <div id="bricNow" class="tabcontent">
+                        <h3>BRIC Now:</h3>
+                    </div>
+
+                    <div id="bricLater" class = "tabcontent">
+                        <h3>BRIC Later:</h3>                
+                    </div>
+
+                    <div id="bricCapacity" class="tabcontent">
+                        <h3>BRIC Capacity:</h3>
+                    </div>              
+                </div>   
             </div>
         </div>
-            
-            <!-- main class is the empty white space between header and footer. Insert main chunk of project here -->
-            <div class = main>
-                
-            </div>
-        
-        
         
         <!-- footerContainer contains everything within footer -->
         <div class = "footerContainer">
@@ -70,4 +83,7 @@
             </div>
         </div>
     </body>
+    
+    <script src = "assets/style/js/js.js"> </script>
+    
 </html>
