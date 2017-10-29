@@ -47,10 +47,5 @@ public class EBayGpsProductManager implements GpsProductManager {
 		System.out.println(gpsProducts);
 		return gpsProducts;
 	}
-	
-	public static void main(String[] args) {
-		EBayGpsProductManager m = new EBayGpsProductManager();
-		m.listAllGpsProducts();
-	}
 
 }
