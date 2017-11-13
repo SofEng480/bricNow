@@ -86,5 +86,11 @@ public class Scraper
 	    	out.close();
 	    	System.out.print("DATA GATHERED");
 		}
+                
+                // Uploads a file to s3 bucket. Need file name, AWS bucket name, and AWS key
+                String key = "";
+                String bucket = "";
+                String file = "";
+                UploadObjectSingleOperation upload = new UploadObjectSingleOperation(bucket, key, file);
 	}
 }
