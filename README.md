@@ -1,27 +1,14 @@
-Overview
+BricNow
 -------------
+BricNow is a website that shows the current capacity of  the Cal Poly Pomona Gym
+"the BRIC"
 
-The skeleton of the demo web project for CS480.
+This project uses: 
+1. Java Spring Boot
+3. AWS EC2
+4. Jenkins
+2. Maven 
 
-This project is designed to let you practice the different aspects of software engineering, such as version control, design, tests, build, deployment, and maintenance.
-
-Environment Setup
------------------
-
-1. Install the latests Maven (http://maven.apache.org/download.cgi)
-2. Install the latest Eclipse (http://www.eclipse.org/)
-3. Make sure your Eclipse has Maven installed (It should have been included in the latest version of the Eclipse)
-
-Importing the Project into Eclipse
-----------------------------------
-
-1. File->Import->Maven->Existing Maven Projects
-2. Select the directory containing the pom.xml file
-3. Finish
-
-Building the Project for the First Time
----------------------------------------
-1. Right-click on the project root folder->Maven->Update Project
 
 Running the Project Locally
 ----------------------------------------
