@@ -43,29 +43,75 @@
                     <h3 class = welcomeMessage>Welcome to Bric Now!</h3>
                 </div>            
             
-            <!-- The contentContainer class contains the actual graphs -->
+            <!-- The contentContainer class contains the actual data -->
             <div class = contentContainer>
                 <div class=container>
                     <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'bricNow')" id = "default">BRIC Now</button>
+                        <button class="tablinks" onclick="openTab(event, 'bricNow')" id="default">BRIC Now</button>
                         <button class="tablinks" onclick="openTab(event, 'bricLater')">BRIC Later</button>
-                        <button class="tablinks" onclick="openTab(event, 'bricCapacity')">BRIC Capacity</button>
                     </div>
 
                     <div id="bricNow" class="tabcontent">
-                        <h3>BRIC Now:</h3>
-                        <div id="chart_div" ></div>
+                        <h3>BRIC Now Capacity:</h3>
+                        <div id="speedmeter"></div>
+                        <div class="counterContainer">
+                            <h4>Studio B - MMA/Cross-Training: </h4>
+                            <h4>Climbing Wall: </h4>
+                            <h4>Fitness Area - 2nd Floor: </h4>
+                            <h4>Court 1 (MAC): </h4>
+                            <h4>Court 2: </h4>
+                            <h4>Court 3: </h4>
+                            <h4>Court 4: </h4>
+                            <h4>3rd Floor - Northeast Area: </h4>
+                            <h4>3rd Floor - North Area: </h4>
+                            <h4>Olympic Platforms: </h4>
+                            <h4>3rd Floor - West Area: </h4>
+                            <h4>Bench Presses: </h4>
+                        </div>
                     </div>
 
                     <div id="bricLater" class = "tabcontent">
-                        <h3>BRIC Later:</h3>  
-                        <div id="chart_div2"></div>
-                    </div>
-
-                    <div id="bricCapacity" class="tabcontent">
-                        <h3>BRIC Capacity:</h3>
-                        <div id="chart_div3"></div>
-                    </div>              
+                        <div class="verticalTab">
+                            <div class="verticalTabButtons">
+                                <button class="verticaltablinks" onclick="openTab2(event, 'monday')" id="default2">Monday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'tuesday')">Tuesday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'wednesday')">Wednesday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'thursday')">Thursday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'friday')">Friday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'saturday')">Saturday</button>
+                                <button class="verticaltablinks" onclick="openTab2(event, 'sunday')">Sunday</button>   
+                            </div>                                 
+                                
+                            <div id="monday" class = tabcontent2>
+                                <h3>BRIC Later: Monday</h3>  
+                                <div id="bricLaterGraph1"></div>                            
+                            </div>
+                            <div id="tuesday" class = tabcontent2>
+                                <h3>BRIC Later: Tuesday</h3>  
+                                <div id="bricLaterGraph2"></div>                            
+                            </div>
+                            <div id="wednesday" class = tabcontent2>
+                                <h3>BRIC Later: Wednesday</h3>  
+                                <div id="bricLaterGraph3"></div>                            
+                            </div>
+                            <div id="thursday" class = tabcontent2>
+                                <h3>BRIC Later: Thursday</h3>  
+                                <div id="bricLaterGraph4"></div>                            
+                            </div>
+                            <div id="friday" class = tabcontent2>
+                                <h3>BRIC Later: Friday</h3>  
+                                <div id="bricLaterGraph5"></div>                            
+                            </div>
+                            <div id="saturday" class = tabcontent2>
+                                <h3>BRIC Later: Saturday</h3>  
+                                <div id="bricLaterGraph6"></div>                            
+                            </div>   
+                            <div id="sunday" class = tabcontent2>
+                                <h3>BRIC Later: Sunday</h3>  
+                                <div id="bricLaterGraph7"></div>                            
+                            </div>            
+                        </div>                                              
+                    </div>             
                 </div>   
             </div>
         </div>

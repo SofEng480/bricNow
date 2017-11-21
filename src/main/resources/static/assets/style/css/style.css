@@ -34,7 +34,6 @@ logosection and button section*/
     display: -webkit-flex;
     display: flex;
     position: relative;
-    display: flex;
     width: 100%;
     height: 100px;
 }
@@ -50,7 +49,6 @@ logosection and button section*/
     line-height: 100px;
     font-size: 5em;
     text-decoration: none;
-    width: 100%;
 }
 
 /*Style for team logo*/
@@ -143,7 +141,7 @@ img.logoImage{
 .contentContainer{
     display: -webkit-flex;
     display: flex;
-    height:1200px;
+    height:1300px;
     margin-left: 10%;
     margin-right: 10%;
     padding: 0;
@@ -166,8 +164,10 @@ img.logoImage{
     margin-right: 5%;
     border-radius: 5px;
     border: 1px solid black;
+    overflow: auto;
 }
 
+/*Style for horizontal tab which holds Bric Now and Bric Later button*/
 .tab{
     width: 100%;
     height: 80px;
@@ -175,9 +175,22 @@ img.logoImage{
     border-bottom: 1px solid black;
 }
 
+/*Style for veritcal tab which holds days of the week button*/
+.verticalTab{
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: inline;
+    display: flex;
+    display: -webkit-flex;    
+}
+
+/*Style for both horizontal and vertical buttons*/
 .tab button{
     margin-left: 1px;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: "Bookman", "Times New Roman", serif;
     background-color:yellow;
     cursor:pointer;
@@ -187,21 +200,59 @@ img.logoImage{
     height: 100%;
 }
 
+.verticalTab button{
+    width: 200px;
+    height: 80px;
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 22px 16px;
+    border: 1px solid #ccc;
+    border-left: 0px;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;    
+}
+
 .tab button:hover{
     background-color: goldenrod;
+}
+
+.verticalTab button:hover{
+    background-color: lightblue;
 }
 
 .tab button.active{
     background-color: gold;
 }
 
+.verticalTab button.active{
+    background-color: lightblue;
+}
+
+/*Styles for tabcontent 1 and 2. 
+1 encompasses 2*/
 .tabcontent{
     width: 100%;
-    height: 50%;
-    overflow: auto;
+    height: 100%;
     font-size: 20px;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
+    float: left;
+}
+
+.tabcontent2{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+    float: left;
+}
+
+#bricNow{
+    margin-left: 10px;
 }
 
 @-webkit-keyframes fadeEffect {
