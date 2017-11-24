@@ -20,7 +20,8 @@
                             <a href = "index.html"class="caption">BRIC NOW</a>
                         </div>
 
-                    <!-- menuButtonContainer contains the sign-up/login button class. -->
+                    <!-- menuButtonContainer contains the sign-up/login button class. 
+                    Once project is finalized will likely remove this section-->
 <!--
                     <div class ="menuButtonContainer">
                         <div class = "menuButton">
@@ -46,14 +47,19 @@
             <!-- The contentContainer class contains the actual data -->
             <div class = contentContainer>
                 <div class=container>
-                    <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'bricNow')" id="default">BRIC Now</button>
-                        <button class="tablinks" onclick="openTab(event, 'bricLater')">BRIC Later</button>
+                    <div class="horizontalTab">
+                        <button class="horizontalTabButton" 
+                                onclick="openHorizontalTab(event, 'bricNow')" 
+                                id="default">BRIC Now
+                        </button>
+                        <button class="horizontalTabButton"
+                                onclick="openHorizontalTab(event, 'bricLater')">BRIC Later
+                        </button>
                     </div>
 
-                    <div id="bricNow" class="tabcontent">
+                    <div id="bricNow" class="horizontalTabContent">
                         <h3>BRIC Now Capacity:</h3>
-                        <div id="speedmeter"></div>
+                        <div id="capacityMeter"></div>
                         <div class="counterContainer">
                             <h4>Studio B - MMA/Cross-Training: </h4>
                             <h4>Climbing Wall: </h4>
@@ -70,45 +76,59 @@
                         </div>
                     </div>
 
-                    <div id="bricLater" class = "tabcontent">
+                    <div id="bricLater" class = "horizontalTabContent">
                         <div class="verticalTab">
                             <div class="verticalTabButtons">
-                                <button class="verticaltablinks" onclick="openTab2(event, 'monday')" id="default2">Monday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'tuesday')">Tuesday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'wednesday')">Wednesday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'thursday')">Thursday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'friday')">Friday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'saturday')">Saturday</button>
-                                <button class="verticaltablinks" onclick="openTab2(event, 'sunday')">Sunday</button>   
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'monday')" id="default2">Monday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'tuesday')">Tuesday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'wednesday')">Wednesday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'thursday')">Thursday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'friday')">Friday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'saturday')">Saturday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'sunday')">Sunday</button>   
                             </div>                                 
                                 
-                            <div id="monday" class = tabcontent2>
-                                <h3>BRIC Later: Monday</h3>  
-                                <div id="bricLaterGraph1"></div>                            
+                            <div id="monday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Monday</h3>  
+                                    <div id="bricLaterMondayGraph"></div>  
+                                </div>                        
                             </div>
-                            <div id="tuesday" class = tabcontent2>
-                                <h3>BRIC Later: Tuesday</h3>  
-                                <div id="bricLaterGraph2"></div>                            
+                            <div id="tuesday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Tuesday</h3>  
+                                    <div id="bricLaterTuesdayGraph"></div>  
+                                </div>                            
                             </div>
-                            <div id="wednesday" class = tabcontent2>
-                                <h3>BRIC Later: Wednesday</h3>  
-                                <div id="bricLaterGraph3"></div>                            
+                            <div id="wednesday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Wednesday</h3>  
+                                    <div id="bricLaterWednesdayGraph"></div>  
+                                </div>                             
                             </div>
-                            <div id="thursday" class = tabcontent2>
-                                <h3>BRIC Later: Thursday</h3>  
-                                <div id="bricLaterGraph4"></div>                            
+                            <div id="thursday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Thursday</h3>  
+                                    <div id="bricLaterThursdayGraph"></div>  
+                                </div>                             
                             </div>
-                            <div id="friday" class = tabcontent2>
-                                <h3>BRIC Later: Friday</h3>  
-                                <div id="bricLaterGraph5"></div>                            
+                            <div id="friday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Friday</h3>  
+                                    <div id="bricLaterFridayGraph"></div>  
+                                </div>                              
                             </div>
-                            <div id="saturday" class = tabcontent2>
-                                <h3>BRIC Later: Saturday</h3>  
-                                <div id="bricLaterGraph6"></div>                            
+                            <div id="saturday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Saturday</h3>  
+                                    <div id="bricLaterSaturdayGraph"></div>  
+                                </div>                              
                             </div>   
-                            <div id="sunday" class = tabcontent2>
-                                <h3>BRIC Later: Sunday</h3>  
-                                <div id="bricLaterGraph7"></div>                            
+                            <div id="sunday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Sunday</h3>  
+                                    <div id="bricLaterSundayGraph"></div>  
+                                </div>                             
                             </div>            
                         </div>                                              
                     </div>             
@@ -119,24 +139,86 @@
         <!-- footerContainer contains everything within footer -->
         <div class = "footerContainer">
             <!-- footerLinkContainer contains the 3 links (contact, about, and faq) -->
-            <div class = "footerLinkContainer">
-                <p><a href = "#" class = "footerLink">Contact Us</a></p>
-                <p><a href = "#" class = "footerLink">About</a></p>
-                <p><a href = "#" class = "footerLink">FAQ</a></p>                    
+            <div class = "footerButtonGroupContainer">
+                <button id="contactUs" class = footerButton>Contact Us</button>
+                <button id="about" class = footerButton>About</button>
+                <button id="faq" class = footerButton>FAQ</button>                    
             </div>
-
+            
+            <!--The contact us pop up box-->
+            <div id = "contactBox" class = "modal">
+                <!--Pop up box content-->
+                <div class ="boxContent">
+                    <div class = "boxHeader">
+                        <span class = "close">&times;</span>
+                        <h3>Contact Us</h3>                         
+                    </div>
+                    <div class = "boxBody">
+                        <ul>
+                          <li><strong>Phone:</strong> 555-555-5555</li>
+                          <li><strong>Email:</strong> ThisIsFake@DontEmail.com</li>
+                          <li><strong>Address:</strong> 12345 Fake Street Drive, Nowhere, CA, 67890</li>
+                        </ul> 
+                    </div>
+                    <div class = "boxFooter"></div>
+                </div>            
+            </div>
+            
+            <!--The about pop up box-->
+            <div id = "aboutBox" class = "modal">
+                <!--Pop up box content-->
+                <div class ="boxContent">
+                    <div class = "boxHeader">
+                        <span class = "close">&times;</span>
+                        <h3>About</h3> 
+                    </div>
+                    <div class = "boxBody">
+                        <ul>
+                            <li>This site was created by four CS students for
+                                the sake of their grade.
+                            </li>
+                            <li>It was also so that they can graduate.</li>
+                            <li>Oh, it can be used to see how many people are at the BRIC
+                                either now or at a later point time.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class = "boxFooter"></div>
+                </div>            
+            </div>
+            
+            <!--The FAQ pop up box-->
+            <div id = "faqBox" class = "modal">
+                <!--Pop up box content-->
+                <div class ="boxContent">
+                    <div class = "boxHeader">
+                        <span class = "close">&times;</span>
+                        <h3>FAQ</h3>
+                    </div>
+                    <div class = "boxBody">
+                        <ul>
+                            <li><strong>BRIC NOW:</strong> The BRIC NOW tap will display the last       
+                                counted number of people at the BRIC capacity. It will further break down into the number of people at each section of the BRIC.
+                            </li>
+                            <li><strong>BRIC LATER:</strong> The BRIC LATER tap will display an estimate     of how many people will use the BRIC facility at a later point in time   
+                                depending on the average number of users for that day and time. It can display any day of the week depending on the tab pressed.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class = "boxFooter"></div>
+                </div>
+            </div>
+            
             <!-- copyright class contains the copyright statement -->
             <div class = "copyright">
-                <div class = "copyrightContainer">
-                    <p class = copyrightMessage>&copy; Copyright 2017 SofEng480</p>                        
-                </div>
+                <p>&copy; Copyright 2017 SofEng480</p> 
             </div>
         </div>
         
+        <!--Javascript source-->
         <script src = "assets/style/js/js.js"> </script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="assets/style/js/js.js"></script>
 
-        
     </body>
 </html>

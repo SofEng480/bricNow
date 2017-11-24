@@ -1,13 +1,14 @@
-function openTab(evt, tabName){
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");            
-    for(i=0; i<tabcontent.length; i++){
-        tabcontent[i].style.display="none";
+//Function for switching horizontal tabs, BricNow and BricLater
+function openHorizontalTab(evt, tabName){
+    var i, horizontalTabContent, horizontalTabButton;
+    horizontalTabContent = document.getElementsByClassName("horizontalTabContent");            
+    for(i=0; i<horizontalTabContent.length; i++){
+        horizontalTabContent[i].style.display="none";
     }
 
-    tablinks = document.getElementsByClassName("tablinks");
-    for(i=0; i<tablinks.length; i++){
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    horizontalTabButton = document.getElementsByClassName("horizontalTabButton");
+    for(i=0; i<horizontalTabButton.length; i++){
+        horizontalTabButton[i].className = horizontalTabButton[i].className.replace(" active", "");
     }  
 
     document.getElementById(tabName).style.display = "block";
@@ -15,16 +16,17 @@ function openTab(evt, tabName){
 }
 document.getElementById("default").click();
 
-function openTab2(evt, tabName){
-    var i, tabcontent2, verticaltablinks;
-    tabcontent2 = document.getElementsByClassName("tabcontent2");            
-    for(i=0; i<tabcontent2.length; i++){
-        tabcontent2[i].style.display="none";
+//Function for switching vertical tabs, Monday-Sunday tabs in BricLater
+function openVerticalTab(evt, tabName){
+    var i, verticalTabContent, verticalTabButton;
+    verticalTabContent = document.getElementsByClassName("verticalTabContent");            
+    for(i=0; i<verticalTabContent.length; i++){
+        verticalTabContent[i].style.display="none";
     }
 
-    verticaltablinks = document.getElementsByClassName("verticaltablinks");
-    for(i=0; i<verticaltablinks.length; i++){
-        verticaltablinks[i].className = verticaltablinks[i].className.replace(" active", "");
+    verticalTabButton = document.getElementsByClassName("verticalTabButton");
+    for(i=0; i<verticalTabButton.length; i++){
+        verticalTabButton[i].className = verticalTabButton[i].className.replace(" active", "");
     }  
 
     document.getElementById(tabName).style.display = "block";
@@ -34,10 +36,11 @@ document.getElementById("default2").click();
 
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.load('current', {packages: ['gauge']});
-google.charts.setOnLoadCallback(drawBasic);
-google.charts.setOnLoadCallback(drawMeter);
+google.charts.setOnLoadCallback(drawLineGraph);
+google.charts.setOnLoadCallback(drawSpeedMeter);
 
-function drawBasic() {
+//Function for drawing line graph
+function drawLineGraph() {
 
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
@@ -67,12 +70,13 @@ function drawBasic() {
         }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('bricLaterGraph1'));
+    var chart = new google.visualization.LineChart(document.getElementById('bricLaterMondayGraph'));
 
     chart.draw(data, options);
 }
 
-function drawMeter(){
+//Function for drawing speedmeter
+function drawSpeedMeter(){
     
   var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
@@ -87,7 +91,7 @@ function drawMeter(){
             
         };
 
-        var chart = new google.visualization.Gauge(document.getElementById('speedmeter'));
+        var chart = new google.visualization.Gauge(document.getElementById('capacityMeter'));
 
         chart.draw(data, options);
 
@@ -96,4 +100,49 @@ function drawMeter(){
           chart.draw(data, options);
         }, 10000);
 }
-    
+
+//Following is used for the contact us, about, faq button events
+//Used three span variables, one for each box's close(x) button
+var contactBox = document.getElementById("contactBox");
+var aboutBox = document.getElementById('aboutBox');
+var faqBox = document.getElementById('faqBox');
+var contactUs = document.getElementById("contactUs");
+var about = document.getElementById('about');
+var faq = document.getElementById('faq');
+var span1 = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close")[1];
+var span3 = document.getElementsByClassName("close")[2];
+var modal;
+
+contactUs.onclick = function(){
+    contactBox.style.display = "block";
+    modal = contactBox;
+}
+
+about.onclick = function(){
+    aboutBox.style.display = "block";
+    modal = aboutBox;
+}
+
+faq.onclick = function(){
+    faqBox.style.display = "block";
+    modal = faqBox;
+}
+
+span1.onclick = function(){
+    modal.style.display = "none";
+}
+
+span2.onclick = function(){
+    modal.style.display = "none";
+}
+
+span3.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}

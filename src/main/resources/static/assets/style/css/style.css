@@ -2,6 +2,10 @@ body{
     margin: 0;
 }
 
+button:focus{
+    outline: 0;
+}
+
 /*Style for contanining picture*/
 .pictureContainer{
     background-image: url(../../images/background.jpg);
@@ -11,7 +15,7 @@ body{
     background-attachment: fixed;
 }
 
-/*Style for navigation bar. Place class in cenber above everything
+/*Style for navigation bar. Place class in center above everything
 Also ensure that the navBar will be always seen even when scrolling from position*/
 .navBar{
     display: -webkit-flex;
@@ -38,6 +42,16 @@ logosection and button section*/
     height: 100px;
 }
 
+/*Style for team logo*/
+img.logoImage{
+    display: -webkit-flex;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
 /*Style for BRIC Now caption*/
 .caption{
     display: -webkit-flex;
@@ -49,61 +63,6 @@ logosection and button section*/
     line-height: 100px;
     font-size: 5em;
     text-decoration: none;
-}
-
-/*Style for team logo*/
-img.logoImage{
-    display: -webkit-flex;
-    display: flex;
-    height: 100px;
-    width: 100px;
-    margin-right: 10px;
-    margin-left: 20px;
-
-}
-
-/*Style for button section. Moves button section to right half of navigation bar
-.menuButtonContainer{
-    display: -webkit-flex;
-    display: flex;
-    margin-left: 20px;
-
-}
-
-/*Navigation button style 
-.menuButtonStyle{
-    background-color: white;
-    color: #31A6FF; 
-    border: 2px solid #31A6FF;
-    border-radius: 50px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    font-family:"proxima nova", Arial;
-    font-weight: 100;
-    font-size: 20px;
-    padding: 2px;
-    width: 120px;
-}
-
-/*Navigation button style when a mouse is hovering over button. Adds color change and shadow
-.menuButtonStyle:hover {
-    background-color: #31A6FF;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/*Style that address the area around the button such as margin and button placement
-.menuButton{
-    display: -webkit-flex;
-    display: flex;
-    float: right;
-    position:relative;
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 100px;
 }
 
 /*Style for header.*/
@@ -168,11 +127,45 @@ img.logoImage{
 }
 
 /*Style for horizontal tab which holds Bric Now and Bric Later button*/
-.tab{
+.horizontalTab{
     width: 100%;
     height: 80px;
     overflow: auto;
     border-bottom: 1px solid black;
+}
+
+/*Styles for horizontal tab content
+This holds the container for BRIC NOW and BRIC LATER*/
+.horizontalTabContent{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+    float: left;
+}
+
+/*Style for horizontal buttons
+ie. BRIC NOW and BRIC LATER buttons*/
+.horizontalTabButton{
+    margin-left: 1px;
+    font-size: 1.5em;
+    font-family: "Bookman", "Times New Roman", serif;
+    background-color:yellow;
+    cursor:pointer;
+    padding:14px 16px;
+    transition: 0.3s;
+    width: 20%;
+    height: 100%;
+}
+
+/*Animation for horizontal tab buttons*/
+.horizontalTabButton:hover{
+    background-color: goldenrod;
+}
+
+.horizontalTabButton.active{
+    background-color: gold;
 }
 
 /*Style for veritcal tab which holds days of the week button*/
@@ -187,20 +180,21 @@ img.logoImage{
     display: -webkit-flex;    
 }
 
-/*Style for both horizontal and vertical buttons*/
-.tab button{
-    margin-left: 1px;
-    font-size: 1.5em;
-    font-family: "Bookman", "Times New Roman", serif;
-    background-color:yellow;
-    cursor:pointer;
-    padding:14px 16px;
-    transition: 0.3s;
-    width: 20%;
+/*Style for vertical tab content
+This holds the container for BRIC LATER's 
+days of the week buttons*/
+.verticalTabContent{
+    width: 100%;
     height: 100%;
+    font-size: 20px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+    float: left;
 }
 
-.verticalTab button{
+/*Style for vertical tab buttons
+ie. The days of the week*/
+.verticalTabButton{
     width: 200px;
     height: 80px;
     display: block;
@@ -215,46 +209,26 @@ img.logoImage{
     transition: 0.3s;    
 }
 
-.tab button:hover{
-    background-color: goldenrod;
-}
-
-.verticalTab button:hover{
+/*Animation for vertical tab buttons*/
+.verticalTabButton:hover{
     background-color: lightblue;
 }
 
-.tab button.active{
-    background-color: gold;
-}
-
-.verticalTab button.active{
+.verticalTabButton.active{
     background-color: lightblue;
 }
 
-/*Styles for tabcontent 1 and 2. 
-1 encompasses 2*/
-.tabcontent{
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-    float: left;
+/*Style for graph container: holds graph title and the graph*/
+.graphContainer{
+    margin-left: 10px;
 }
 
-.tabcontent2{
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-    float: left;
-}
-
+/*Style for BRIC Now tab*/
 #bricNow{
     margin-left: 10px;
 }
 
+/*Horizontal tab animation effect*/
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -268,7 +242,6 @@ img.logoImage{
 /*Style for the footer at bottom of page.*/
 .footerContainer{
     height: 210px;
-    width: 100%;
     top: 2800px;
     right: 0;
     bottom: 0;
@@ -279,24 +252,156 @@ img.logoImage{
     margin-bottom: 0;
     color: white;
     z-index: 1;
+    display: block;
 }
 
-/*Style for the box that contain the footer links*/
-.footerLinkContainer{
-    text-align: center;
-}
-
-/*Style that changes color of the links. (Changes color from purpe/underlined to white/no underline*/
-.footerLink{
+/*Style for footer button groups, 
+ie. contact us, about, faq*/
+.footerButton{
+    background-color:#1e1b18;
     color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 10px; 
+}
+
+/*Style for the pop up box that appear
+when one of the footer buttons are clicked*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    color: black;
+    padding-top: 8%;
+}
+
+/*Style for pop up box content*/
+.boxContent{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 gray;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animatetop;
+    animation-duration: 0.5s;
+    overflow: auto;
+}
+
+/* Animation for pop up boxes */
+@-webkit-keyframes animatetop {
+    from {top: -8%; opacity:0} 
+    to {top: 0%; opacity:1}
+}
+
+/* Animation for pop up boxes */
+@keyframes animatetop {
+    from {top: -8%; opacity:0} 
+    to {top: 0%; opacity:1}
+}
+
+/*Style for pop up box header*/
+.boxHeader{
+    padding: 2px 16px;
+    background-color: #9E540A;
+    color: white;
+    height: auto;
+    margin: auto;
+    text-align: left;
+}
+
+/*Style for the X button for pop up box*/
+.close{
+    cursor: pointer;
+    color: lightgray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*Animation for close button*/
+.close: hover,
+.close: focus{
+    color: black;
     text-decoration: none;
+    cursor: pointer;
+}
+
+/*Style for pop up box body*/
+.boxBody{
+    height: auto;
+    text-align: left;
+    overflow: auto;
+}
+
+/*Style for pop up box footer*/
+.boxFooter{
 }
 
 /*Copyright section at bottom of footer.*/
 .copyright{
-    margin-top: 60px;
+    margin-top: 90px;
     vertical-align: middle;
     text-align: center;
     line-height: 30px;
     font-size: 8pt;
+}
+
+/*The following are for login/signup buttons. Since we won't use them I've moved them here
+just in case. But will likely remove them once everything is finalized.
+/*Style for button section. Moves button section to right half of navigation bar
+.menuButtonContainer{
+    display: -webkit-flex;
+    display: flex;
+    margin-left: 20px;
+
+}
+
+/*Navigation button style 
+.menuButtonStyle{
+    background-color: white;
+    color: #31A6FF; 
+    border: 2px solid #31A6FF;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    font-family:"proxima nova", Arial;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 2px;
+    width: 120px;
+}
+
+/*Navigation button style when a mouse is hovering over button. Adds color change and shadow
+.menuButtonStyle:hover {
+    background-color: #31A6FF;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*Style that address the area around the button such as margin and button placement
+.menuButton{
+    display: -webkit-flex;
+    display: flex;
+    float: right;
+    position:relative;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px;
 }
