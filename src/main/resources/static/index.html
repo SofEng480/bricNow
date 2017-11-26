@@ -4,7 +4,7 @@
     <!-- header section for title and linking CSS here -->
     <head>
         <title>Welcome to Bric Now!</title>
-        <link rel="stylesheet" type="text/css" href="assets/style/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/style/css/style.css">      
     </head>
     
     <body>
@@ -12,31 +12,13 @@
         <div class = pictureContainer>   
                 <!-- navBar class contains team logo, project name as well as  sign-up/login button. The navBar class exist to seperate the logo section and the button section -->
                 <div class = "navBar">
-                        <!-- logoSection class contains team logo(navBar-logo) and the project name(caption)- It also links to our team site by clicking on logo and back to Bric Now main page by clicking on BRIC Now -->
-                        <div class = "logoSection">
-                            <a href="http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html" target = "_blank">
-                            <img src="assets/images/logo.png" alt="SofEng480" class = logoImage>
-                            </a>
-                            <a href = "index.html"class="caption">BRIC NOW</a>
-                        </div>
-
-                    <!-- menuButtonContainer contains the sign-up/login button class. 
-                    Once project is finalized will likely remove this section-->
-<!--
-                    <div class ="menuButtonContainer">
-                        <div class = "menuButton">
-                            <form action = "#">
-                            <button class = "menuButtonStyle" type = "submit" value="Click here ">Login</button>
-                            </form>
-                        </div>
-
-                        <div class = "menuButton">
-                            <form action = "#">
-                            <button class = "menuButtonStyle" type = "submit" value="Click here ">Sign Up</button>
-                            </form>
-                        </div>          
+                    <!-- logoSection class contains team logo(navBar-logo) and the project name(caption)- It also links to our team site by clicking on logo and back to Bric Now main page by clicking on BRIC Now -->
+                    <div class = "logoSection">
+                        <a href="http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html" target = "_blank">
+                        <img src="assets/images/logo.png" alt="SofEng480" class = logoImage>
+                        </a>
+                        <a href = "index.html"class="caption">BRIC NOW</a>
                     </div>
--->
                 </div>
             
                 <!-- headerContainer class contains welcoming message. -->
@@ -140,8 +122,9 @@
         <div class = "footerContainer">
             <!-- footerLinkContainer contains the 3 links (contact, about, and faq) -->
             <div class = "footerButtonGroupContainer">
+                <a href = http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html
+                   target = "_blank" class = "aboutUs">About</a>
                 <button id="contactUs" class = footerButton>Contact Us</button>
-                <button id="about" class = footerButton>About</button>
                 <button id="faq" class = footerButton>FAQ</button>                    
             </div>
             
@@ -162,30 +145,7 @@
                     </div>
                     <div class = "boxFooter"></div>
                 </div>            
-            </div>
-            
-            <!--The about pop up box-->
-            <div id = "aboutBox" class = "modal">
-                <!--Pop up box content-->
-                <div class ="boxContent">
-                    <div class = "boxHeader">
-                        <span class = "close">&times;</span>
-                        <h3>About</h3> 
-                    </div>
-                    <div class = "boxBody">
-                        <ul>
-                            <li>This site was created by four CS students for
-                                the sake of their grade.
-                            </li>
-                            <li>It was also so that they can graduate.</li>
-                            <li>Oh, it can be used to see how many people are at the BRIC
-                                either now or at a later point time.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class = "boxFooter"></div>
-                </div>            
-            </div>
+            </div>            
             
             <!--The FAQ pop up box-->
             <div id = "faqBox" class = "modal">
@@ -216,9 +176,8 @@
         </div>
         
         <!--Javascript source-->
-        <script src = "assets/style/js/js.js"> </script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="assets/style/js/js.js"></script>
-
+        
     </body>
 </html>

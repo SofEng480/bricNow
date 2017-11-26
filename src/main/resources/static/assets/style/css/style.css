@@ -157,6 +157,7 @@ ie. BRIC NOW and BRIC LATER buttons*/
     transition: 0.3s;
     width: 35%;
     height: 100%;
+    border-radius: 30px;
 }
 
 /*Animation for horizontal tab buttons*/
@@ -207,7 +208,8 @@ ie. The days of the week*/
     outline: none;
     text-align: center;
     cursor: pointer;
-    transition: 0.3s;    
+    transition: 0.3s;
+        border-radius: 30px;
 }
 
 /*Animation for vertical tab buttons*/
@@ -258,6 +260,18 @@ ie. The days of the week*/
     display: block;
 }
 
+/*Style for footer button group container*/
+.footerButtonGroupContainer{
+}
+
+/*Style for about us <a> */
+.aboutUs{
+    text-decoration: none;
+    color: white;
+    font-family: "Tahoma", "Times New Roman";
+    font-size: 15px;
+}
+
 /*Style for footer button groups, 
 ie. contact us, about, faq*/
 .footerButton{
@@ -268,6 +282,7 @@ ie. contact us, about, faq*/
     display: block;
     margin: auto;
     margin-top: 10px; 
+    font-size: 15px;
 }
 
 /*Style for the pop up box that appear
@@ -360,51 +375,5 @@ when one of the footer buttons are clicked*/
     vertical-align: middle;
     text-align: center;
     line-height: 30px;
-    font-size: 8pt;
-}
-
-/*The following are for login/signup buttons. Since we won't use them I've moved them here
-just in case. But will likely remove them once everything is finalized.
-/*Style for button section. Moves button section to right half of navigation bar
-.menuButtonContainer{
-    display: -webkit-flex;
-    display: flex;
-    margin-left: 20px;
-
-}
-
-/*Navigation button style 
-.menuButtonStyle{
-    background-color: white;
-    color: #31A6FF; 
-    border: 2px solid #31A6FF;
-    border-radius: 50px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    font-family:"proxima nova", Arial;
-    font-weight: 100;
-    font-size: 20px;
-    padding: 2px;
-    width: 120px;
-}
-
-/*Navigation button style when a mouse is hovering over button. Adds color change and shadow
-.menuButtonStyle:hover {
-    background-color: #31A6FF;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/*Style that address the area around the button such as margin and button placement
-.menuButton{
-    display: -webkit-flex;
-    display: flex;
-    float: right;
-    position:relative;
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 100px;
+    font-size: 12px;
 }

@@ -14,7 +14,6 @@ function openHorizontalTab(evt, tabName){
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-document.getElementById("default").click();
 
 //Function for switching vertical tabs, Monday-Sunday tabs in BricLater
 function openVerticalTab(evt, tabName){
@@ -32,12 +31,6 @@ function openVerticalTab(evt, tabName){
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-document.getElementById("default2").click();
-
-google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.load('current', {packages: ['gauge']});
-google.charts.setOnLoadCallback(drawLineGraph);
-google.charts.setOnLoadCallback(drawSpeedMeter);
 
 //Function for drawing line graph
 function drawLineGraph() {
@@ -75,7 +68,7 @@ function drawLineGraph() {
     chart.draw(data, options);
 }
 
-//Function for drawing speedmeter
+//Function for drawing speedmeter using google charts
 function drawSpeedMeter(){
     
   var data = google.visualization.arrayToDataTable([
@@ -104,24 +97,16 @@ function drawSpeedMeter(){
 //Following is used for the contact us, about, faq button events
 //Used three span variables, one for each box's close(x) button
 var contactBox = document.getElementById("contactBox");
-var aboutBox = document.getElementById('aboutBox');
-var faqBox = document.getElementById('faqBox');
+var faqBox = document.getElementById("faqBox");
 var contactUs = document.getElementById("contactUs");
-var about = document.getElementById('about');
-var faq = document.getElementById('faq');
+var faq = document.getElementById("faq");
 var span1 = document.getElementsByClassName("close")[0];
 var span2 = document.getElementsByClassName("close")[1];
-var span3 = document.getElementsByClassName("close")[2];
 var modal;
 
 contactUs.onclick = function(){
     contactBox.style.display = "block";
     modal = contactBox;
-}
-
-about.onclick = function(){
-    aboutBox.style.display = "block";
-    modal = aboutBox;
 }
 
 faq.onclick = function(){
@@ -137,12 +122,16 @@ span2.onclick = function(){
     modal.style.display = "none";
 }
 
-span3.onclick = function(){
-    modal.style.display = "none";
-}
-
 window.onclick = function(event){
     if (event.target == modal){
         modal.style.display = "none";
     }
 }
+
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.load('current', {packages: ['gauge']});
+google.charts.setOnLoadCallback(drawLineGraph);
+google.charts.setOnLoadCallback(drawSpeedMeter);
+document.getElementById("default").click();
+document.getElementById("default2").click();
+createSpeedMeter();
