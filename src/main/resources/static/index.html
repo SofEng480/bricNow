@@ -4,7 +4,10 @@
     <!-- header section for title and linking CSS here -->
     <head>
         <title>Welcome to Bric Now!</title>
-        <link rel="stylesheet" type="text/css" href="assets/style/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/style/css/style.css">   
+        <link rel="stylesheet" type="text/css" href="assets/style/css/c3.css">
+        <script src= "assets/style/js/d3.v3.min.js" charset="utf-8"></script>
+        <script src="assets/style/js/c3.min.js"></script>        
     </head>
     
     <body>
@@ -12,30 +15,13 @@
         <div class = pictureContainer>   
                 <!-- navBar class contains team logo, project name as well as  sign-up/login button. The navBar class exist to seperate the logo section and the button section -->
                 <div class = "navBar">
-                        <!-- logoSection class contains team logo(navBar-logo) and the project name(caption)- It also links to our team site by clicking on logo and back to Bric Now main page by clicking on BRIC Now -->
-                        <div class = "logoSection">
-                            <a href="http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html" target = "_blank">
-                            <img src="assets/images/logo.png" alt="SofEng480" class = logoImage>
-                            </a>
-                            <a href = "index.html"class="caption">BRIC NOW</a>
-                        </div>
-
-                    <!-- menuButtonContainer contains the sign-up/login button class. -->
-<!--
-                    <div class ="menuButtonContainer">
-                        <div class = "menuButton">
-                            <form action = "#">
-                            <button class = "menuButtonStyle" type = "submit" value="Click here ">Login</button>
-                            </form>
-                        </div>
-
-                        <div class = "menuButton">
-                            <form action = "#">
-                            <button class = "menuButtonStyle" type = "submit" value="Click here ">Sign Up</button>
-                            </form>
-                        </div>          
+                    <!-- logoSection class contains team logo(navBar-logo) and the project name(caption)- It also links to our team site by clicking on logo and back to Bric Now main page by clicking on BRIC Now -->
+                    <div class = "logoSection">
+                        <a href="http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html" target = "_blank">
+                        <img src="assets/images/logo.png" alt="SofEng480" class = logoImage>
+                        </a>
+                        <a href = "index.html"class="caption">BRIC NOW</a>
                     </div>
--->
                 </div>
             
                 <!-- headerContainer class contains welcoming message. -->
@@ -43,29 +29,94 @@
                     <h3 class = welcomeMessage>Welcome to Bric Now!</h3>
                 </div>            
             
-            <!-- The contentContainer class contains the actual graphs -->
+            <!-- The contentContainer class contains the actual data -->
             <div class = contentContainer>
                 <div class=container>
-                    <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'bricNow')" id = "default">BRIC Now</button>
-                        <button class="tablinks" onclick="openTab(event, 'bricLater')">BRIC Later</button>
-                        <button class="tablinks" onclick="openTab(event, 'bricCapacity')">BRIC Capacity</button>
+                    <div class="horizontalTab">
+                        <button class="horizontalTabButton" 
+                                onclick="openHorizontalTab(event, 'bricNow')" 
+                                id="default">BRIC Now
+                        </button>
+                        <button class="horizontalTabButton"
+                                onclick="openHorizontalTab(event, 'bricLater')">BRIC Later
+                        </button>
                     </div>
 
-                    <div id="bricNow" class="tabcontent">
-                        <h3>BRIC Now:</h3>
-                        <div id="chart_div" ></div>
+                    <div id="bricNow" class="horizontalTabContent">
+                        <h3>BRIC Now Capacity:</h3>
+                        <div id="capacityGauge"></div>
+                        <div class="counterContainer">
+                            <h4>Studio B - MMA/Cross-Training: </h4>
+                            <h4>Climbing Wall: </h4>
+                            <h4>Fitness Area - 2nd Floor: </h4>
+                            <h4>Court 1 (MAC): </h4>
+                            <h4>Court 2: </h4>
+                            <h4>Court 3: </h4>
+                            <h4>Court 4: </h4>
+                            <h4>3rd Floor - Northeast Area: </h4>
+                            <h4>3rd Floor - North Area: </h4>
+                            <h4>Olympic Platforms: </h4>
+                            <h4>3rd Floor - West Area: </h4>
+                            <h4>Bench Presses: </h4>
+                        </div>
                     </div>
 
-                    <div id="bricLater" class = "tabcontent">
-                        <h3>BRIC Later:</h3>  
-                        <div id="chart_div2"></div>
-                    </div>
-
-                    <div id="bricCapacity" class="tabcontent">
-                        <h3>BRIC Capacity:</h3>
-                        <div id="chart_div3"></div>
-                    </div>              
+                    <div id="bricLater" class = "horizontalTabContent">
+                        <div class="verticalTab">
+                            <div class="verticalTabButtons">
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'monday')" id="default2">Monday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'tuesday')" id ="tuesdayButton">Tuesday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'wednesday')">Wednesday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'thursday')">Thursday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'friday')">Friday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'saturday')">Saturday</button>
+                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'sunday')">Sunday</button>   
+                            </div>                                 
+                                
+                            <div id="monday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Monday</h3>  
+                                    <div id="bricLaterMondayGraph"></div>  
+                                </div>                        
+                            </div>
+                            <div id="tuesday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Tuesday</h3>  
+                                    <div id="bricLaterTuesdayGraph"></div>  
+                                </div>                            
+                            </div>
+                            <div id="wednesday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Wednesday</h3>  
+                                    <div id="bricLaterWednesdayGraph"></div>  
+                                </div>                             
+                            </div>
+                            <div id="thursday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Thursday</h3>  
+                                    <div id="bricLaterThursdayGraph"></div>  
+                                </div>                             
+                            </div>
+                            <div id="friday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Friday</h3>  
+                                    <div id="bricLaterFridayGraph"></div>  
+                                </div>                              
+                            </div>
+                            <div id="saturday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Saturday</h3>  
+                                    <div id="bricLaterSaturdayGraph"></div>  
+                                </div>                              
+                            </div>   
+                            <div id="sunday" class = verticalTabContent>
+                                <div class = "graphContainer">
+                                    <h3>BRIC Later: Sunday</h3>  
+                                    <div id="bricLaterSundayGraph"></div>  
+                                </div>                             
+                            </div>            
+                        </div>                                              
+                    </div>             
                 </div>   
             </div>
         </div>
@@ -73,24 +124,65 @@
         <!-- footerContainer contains everything within footer -->
         <div class = "footerContainer">
             <!-- footerLinkContainer contains the 3 links (contact, about, and faq) -->
-            <div class = "footerLinkContainer">
-                <p><a href = "#" class = "footerLink">Contact Us</a></p>
-                <p><a href = "#" class = "footerLink">About</a></p>
-                <p><a href = "#" class = "footerLink">FAQ</a></p>                    
+            <div class = "footerButtonGroupContainer">
+                <a href = http://cs480-projects.github.io/teams-fall2017/SofEng480/index.html
+                   target = "_blank" class = "aboutUs">About</a>
+                <button id="contactUs" class = footerButton>Contact Us</button>
+                <button id="faq" class = footerButton>FAQ</button>                    
             </div>
-
+            
+            <!--The contact us pop up box-->
+            <div id = "contactBox" class = "modal">
+                <!--Pop up box content-->
+                <div class ="boxContent">
+                    <div class = "boxHeader">
+                        <span class = "close">&times;</span>
+                        <h3>Contact Us</h3>                         
+                    </div>
+                    <div class = "boxBody">
+                        <ul>
+                          <li><strong>Phone:</strong> 555-555-5555</li>
+                          <li><strong>Email:</strong> ThisIsFake@DontEmail.com</li>
+                          <li><strong>Address:</strong> 12345 Fake Street Drive, Nowhere, CA, 67890</li>
+                        </ul> 
+                    </div>
+                    <div class = "boxFooter"></div>
+                </div>            
+            </div>            
+            
+            <!--The FAQ pop up box-->
+            <div id = "faqBox" class = "modal">
+                <!--Pop up box content-->
+                <div class ="boxContent">
+                    <div class = "boxHeader">
+                        <span class = "close">&times;</span>
+                        <h3>FAQ</h3>
+                    </div>
+                    <div class = "boxBody">
+                        <ul>
+                            <li><strong>BRIC NOW:</strong> The BRIC NOW tap will display the last       
+                                counted number of people at the BRIC capacity. It will further break down into the number of people at each section of the BRIC.
+                            </li>
+                            <li><strong>BRIC LATER:</strong> The BRIC LATER tap will display an estimate     of how many people will use the BRIC facility at a later point in time   
+                                depending on the average number of users for that day and time. It can display any day of the week depending on the tab pressed.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class = "boxFooter"></div>
+                </div>
+            </div>
+            
             <!-- copyright class contains the copyright statement -->
             <div class = "copyright">
-                <div class = "copyrightContainer">
-                    <p class = copyrightMessage>&copy; Copyright 2017 SofEng480</p>                        
-                </div>
+                <p>&copy; Copyright 2017 SofEng480</p> 
             </div>
         </div>
         
-        <script src = "assets/style/js/js.js"> </script>
+        <!--Javascript source-->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="assets/style/js/js.js"></script>
-
+        <script type="text/javascript" src="assets/style/js/gauge.js"></script>
+        <script type="text/javascript" src="assets/style/js/lineGraph.js"></script>
         
     </body>
 </html>
