@@ -69,3 +69,43 @@ window.onclick = function(event){
 
 document.getElementById("default").click();
 document.getElementById("default2").click();
+
+function setAreaData(){
+    var studioB = document.getElementById("studioB");
+    studioB.innerHTML += "1";
+
+    var climbingWall = document.getElementById("climbingWall");
+    climbingWall.innerHTML += "2";
+
+    var fitness = document.getElementById("fitness");
+    fitness.innerHTML += "3";
+
+    var courtOne = document.getElementById("courtOne");
+    courtOne.innerHTML += "4";
+
+    var courtTwo = document.getElementById("courtTwo");
+    courtTwo.innerHTML += "5";
+
+    var courtThree = document.getElementById("courtThree");
+    courtThree.innerHTML += "6";
+
+    var courtFour = document.getElementById("courtFour");
+    courtFour.innerHTML += "7";
+
+    var thirdNorthEast = document.getElementById("thirdNorthEast");
+    thirdNorthEast.innerHTML += "8";
+
+    var thirdNorth = document.getElementById("thirdNorth");
+    thirdNorth.innerHTML += "9";
+
+    var olympic = document.getElementById("olympic");
+    olympic.innerHTML += "10";
+
+    var thirdWest = document.getElementById("thirdWest");
+    thirdWest.innerHTML += "11";
+
+    var benchPress = document.getElementById("benchPress");
+    benchPress.innerHTML += "12";    
+}
+
+setAreaData();
