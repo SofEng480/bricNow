@@ -299,7 +299,7 @@ when one of the footer buttons are clicked*/
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
     color: black;
-    padding-top: 8%;
+    padding-top: 10%;
 }
 
 /*Style for pop up box content*/
