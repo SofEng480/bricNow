@@ -2,12 +2,11 @@ package edu.csupomona.cs480.controller;
 
 import java.util.List;
 
+import edu.csupomona.cs480.Repo.AreaRepository;
+import edu.csupomona.cs480.data.Area;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
@@ -41,6 +40,29 @@ public class WebController {
 	@Autowired
 	private GpsProductManager gpsProductManager;
 
+    @Autowired
+    private AreaRepository areaRepository;
+
+//    @RequestMapping(value = "/area/{id}", method = RequestMethod.GET)
+//    @ResponseStatus(HttpStatus.OK)
+//    public Area getArea(@PathVariable("id") Long id){
+//        return areaRepository.findOne(id);
+//    }
+//    @RequestMapping(value = "/areas/{time}" ,method = RequestMethod.GET)
+//    @ResponseStatus(HttpStatus.OK)
+//    public int getAllAreas(@PathVariable("time") int lastUpdate){
+//        return areaRepository.findByUpdateIntandSum(lastUpdate);
+//    }
+    @RequestMapping(value = "/areas/{id}", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public Area getSum(@PathVariable("id") int id){
+        return areaRepository.getArea(id);
+    }
+//	@RequestMapping(value = "/total", method = RequestMethod.GET)
+//	@ResponseStatus(HttpStatus.OK)
+//	public List<Area> getTotalValues(){
+//    	return areaRepository.getAll();
+//	}
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -55,6 +77,7 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK-CS480-Demo";
 	}
+
 
 	/**
 	 * This is a simple example of how to use a data manager

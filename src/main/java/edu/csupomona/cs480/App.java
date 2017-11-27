@@ -1,19 +1,19 @@
 package edu.csupomona.cs480;
 
+import edu.csupomona.cs480.data.provider.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import edu.csupomona.cs480.data.provider.EBayGpsProductManager;
-import edu.csupomona.cs480.data.provider.FSUserManager;
-import edu.csupomona.cs480.data.provider.GpsProductManager;
-import edu.csupomona.cs480.data.provider.UserManager;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableAutoConfiguration
+@EnableJpaRepositories(basePackages = "edu.csupomona.cs480.Repo")
 @ComponentScan
+@SpringBootApplication
 public class App {
 
     /**
@@ -33,7 +33,11 @@ public class App {
     	GpsProductManager gpsManager = new EBayGpsProductManager();
         return gpsManager;
     }
-
+    @Bean
+    public AreaManager areaManager(){
+        AreaManager area =new BricAreaManager();
+        return area;
+    }
     /**
      * This is the running main method for the web application.
      * Please note that Spring requires that there is one and
