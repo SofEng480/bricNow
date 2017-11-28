@@ -1,3 +1,22 @@
+//Function for setting each area's population
+function setAreaData(){
+    var counter = $('div.counterContainer');
+    var totalNumberOfPeople;
+     
+    $.ajax({
+        url: 'assets/data/bricNowData.json',
+        dataType: 'json',
+        type: 'get',
+        success: function(data){
+            $.each(data, function(index, item){
+                $.each(item, function(key, value){
+                   counter.append(value.area + ': ' + value.lastCount + '</br></br>'); 
+                });
+            });
+        }
+    })
+}
+
 //Function for drawing gauge using c3 and d3
 function createGauge(){
     var chart = c3.generate({
@@ -37,4 +56,5 @@ function createGauge(){
     });  
 }
 
+setAreaData();
 createGauge();
