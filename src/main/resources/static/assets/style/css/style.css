@@ -25,6 +25,7 @@ Also ensure that the navBar will be always seen even when scrolling from positio
     position: fixed;
     margin-left: 10%;
     margin-right: 10%;
+    line-height: 100px;
     width: 80%;
     height: 100px;
     top: 0;
@@ -154,7 +155,7 @@ This holds the container for BRIC NOW and BRIC LATER*/
 /*Style for horizontal buttons
 ie. BRIC NOW and BRIC LATER buttons*/
 .horizontalTabButton{
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: "Bookman", "Times New Roman", serif;
     background-color:yellow;
     cursor:pointer;
