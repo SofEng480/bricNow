@@ -1,8 +1,9 @@
 //Function for setting each area's population
 function setAreaData(){
     var counter = $('div.counterContainer');
-    var totalNumberOfPeople;
+    var totalNumberOfPeople = 0;
      
+    //Get data from json file and pass total number of people to create gauge function
     $.ajax({
         url: 'assets/data/bricNowData.json',
         dataType: 'json',
@@ -10,20 +11,25 @@ function setAreaData(){
         success: function(data){
             $.each(data, function(index, item){
                 $.each(item, function(key, value){
-                   counter.append(value.area + ': ' + value.lastCount + '</br></br>'); 
+                   counter.append(value.area + ': ' + value.lastCount  
+                                  + ' (Update: ' + value.dateLastUpdate + ')</br></br>');
+                    totalNumberOfPeople += +value.lastCount; 
                 });
             });
-        }
+            createGauge(totalNumberOfPeople);
+        }      
     })
 }
 
 //Function for drawing gauge using c3 and d3
-function createGauge(){
+function createGauge(totalNumberOfPeople){
+    var numberOfPeople = 0;
+    numberOfPeople += +totalNumberOfPeople;
     var chart = c3.generate({
         bindto: '#capacityGauge',
         data: {
             columns: [
-                ['data', 10]
+                ['data', numberOfPeople]
             ],
             type: 'gauge',
             onclick: function (d, i) { console.log("onclick", d, i); },
@@ -57,4 +63,3 @@ function createGauge(){
 }
 
 setAreaData();
-createGauge();
