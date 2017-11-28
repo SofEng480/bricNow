@@ -33,6 +33,23 @@ function openVerticalTab(evt, tabName){
     evt.currentTarget.className += " active";
 }
 
+//Function for setting each area's population
+function setAreaData(){
+    var counter = $('div.counterContainer');
+    
+     
+    $.ajax({
+        url: 'assets/data/bricNowData.json',
+        dataType: 'json',
+        type: 'get',
+        success: function(data){
+            $(data.areaPopulation).each(function(index, value){
+                counter.append(value.area + ': ' + value.population + '</br></br>');
+            })
+        }
+    })
+}
+
 //Following is used for the contact us andfaq button events
 //Used two span variables, one for each box's close(x) button
 var contactBox = document.getElementById("contactBox");
@@ -69,3 +86,4 @@ window.onclick = function(event){
 
 document.getElementById("default").click();
 document.getElementById("default2").click();
+setAreaData();

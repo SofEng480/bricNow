@@ -1,0 +1,17 @@
+{
+    "areaPopulation":[
+        {
+            "area": "studio B",
+            "population": 3
+        },
+        {
+            "area": "court 1",
+            "population": 4
+        },
+        {
+            "area": "area 2",
+            "population": 5
+        }
+        
+    ]
+}
