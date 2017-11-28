@@ -33,6 +33,23 @@ function openVerticalTab(evt, tabName){
     evt.currentTarget.className += " active";
 }
 
+//Function for setting each area's population
+function setAreaData(){
+    var counter = $('div.counterContainer');
+    
+     
+    $.ajax({
+        url: 'assets/data/bricNowData.json',
+        dataType: 'json',
+        type: 'get',
+        success: function(data){
+            $(data.areaPopulation).each(function(index, value){
+                counter.append(value.area + ': ' + value.population + '</br></br>');
+            })
+        }
+    })
+}
+
 //Following is used for the contact us andfaq button events
 //Used two span variables, one for each box's close(x) button
 var contactBox = document.getElementById("contactBox");
@@ -69,43 +86,4 @@ window.onclick = function(event){
 
 document.getElementById("default").click();
 document.getElementById("default2").click();
-
-function setAreaData(){
-    var studioB = document.getElementById("studioB");
-    studioB.innerHTML += "1";
-
-    var climbingWall = document.getElementById("climbingWall");
-    climbingWall.innerHTML += "2";
-
-    var fitness = document.getElementById("fitness");
-    fitness.innerHTML += "3";
-
-    var courtOne = document.getElementById("courtOne");
-    courtOne.innerHTML += "4";
-
-    var courtTwo = document.getElementById("courtTwo");
-    courtTwo.innerHTML += "5";
-
-    var courtThree = document.getElementById("courtThree");
-    courtThree.innerHTML += "6";
-
-    var courtFour = document.getElementById("courtFour");
-    courtFour.innerHTML += "7";
-
-    var thirdNorthEast = document.getElementById("thirdNorthEast");
-    thirdNorthEast.innerHTML += "8";
-
-    var thirdNorth = document.getElementById("thirdNorth");
-    thirdNorth.innerHTML += "9";
-
-    var olympic = document.getElementById("olympic");
-    olympic.innerHTML += "10";
-
-    var thirdWest = document.getElementById("thirdWest");
-    thirdWest.innerHTML += "11";
-
-    var benchPress = document.getElementById("benchPress");
-    benchPress.innerHTML += "12";    
-}
-
 setAreaData();
