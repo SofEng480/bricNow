@@ -32,7 +32,7 @@
             <!-- The contentContainer class contains the actual data -->
             <div class = contentContainer>
                 <div class=container>
-                    <div class="horizontalTab">
+                    <div class="horizontalTabButtonContainer">
                         <button class="horizontalTabButton" 
                                 onclick="openHorizontalTab(event, 'bricNow')" 
                                 id="default">BRIC Now
@@ -62,60 +62,44 @@
                     </div>
 
                     <div id="bricLater" class = "horizontalTabContent">
-                        <div class="verticalTab">
-                            <div class="verticalTabButtons">
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'monday')" id="default2">Monday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'tuesday')" id ="tuesdayButton">Tuesday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'wednesday')">Wednesday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'thursday')">Thursday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'friday')">Friday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'saturday')">Saturday</button>
-                                <button class="verticalTabButton" onclick="openVerticalTab(event, 'sunday')">Sunday</button>   
-                            </div>                                 
+                        <div class="verticalTabButtonContainer">
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'monday')" id="default2">Monday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'tuesday')" id ="tuesdayButton">Tuesday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'wednesday')">Wednesday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'thursday')">Thursday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'friday')">Friday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'saturday')">Saturday</button>
+                            <button class="verticalTabButton" onclick="openVerticalTab(event, 'sunday')">Sunday</button>  
+                        </div>
                                 
-                            <div id="monday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Monday</h3>  
-                                    <div id="bricLaterMondayGraph"></div>  
-                                </div>                        
-                            </div>
-                            <div id="tuesday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Tuesday</h3>  
-                                    <div id="bricLaterTuesdayGraph"></div>  
-                                </div>                            
-                            </div>
-                            <div id="wednesday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Wednesday</h3>  
-                                    <div id="bricLaterWednesdayGraph"></div>  
-                                </div>                             
-                            </div>
-                            <div id="thursday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Thursday</h3>  
-                                    <div id="bricLaterThursdayGraph"></div>  
-                                </div>                             
-                            </div>
-                            <div id="friday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Friday</h3>  
-                                    <div id="bricLaterFridayGraph"></div>  
-                                </div>                              
-                            </div>
-                            <div id="saturday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Saturday</h3>  
-                                    <div id="bricLaterSaturdayGraph"></div>  
-                                </div>                              
-                            </div>   
-                            <div id="sunday" class = verticalTabContent>
-                                <div class = "graphContainer">
-                                    <h3>BRIC Later: Sunday</h3>  
-                                    <div id="bricLaterSundayGraph"></div>  
-                                </div>                             
-                            </div>            
-                        </div>                                              
+                        <div id="monday" class = graphContainer>
+                            <h3>BRIC Later: Monday</h3>  
+                            <div id="bricLaterMondayGraph"></div>                          
+                        </div>
+                        <div id="tuesday" class = graphContainer>
+                            <h3>BRIC Later: Tuesday</h3>  
+                            <div id="bricLaterTuesdayGraph"></div>                      
+                        </div>
+                        <div id="wednesday" class = graphContainer>
+                            <h3>BRIC Later: Wednesday</h3>  
+                            <div id="bricLaterWednesdayGraph"></div>                      
+                        </div>
+                        <div id="thursday" class = graphContainer>
+                            <h3>BRIC Later: Thursday</h3>  
+                            <div id="bricLaterThursdayGraph"></div>                            
+                        </div>
+                        <div id="friday" class = graphContainer>     
+                            <h3>BRIC Later: Friday</h3>  
+                            <div id="bricLaterFridayGraph"></div>                      
+                        </div>
+                        <div id="saturday" class = graphContainer>
+                            <h3>BRIC Later: Saturday</h3>  
+                            <div id="bricLaterSaturdayGraph"></div>      
+                        </div>
+                        <div id="sunday" class = graphContainer>
+                            <h3>BRIC Later: Sunday</h3>  
+                            <div id="bricLaterSundayGraph"></div>                              
+                        </div>                                                         
                     </div>             
                 </div>   
             </div>
@@ -179,7 +163,6 @@
         </div>
         
         <!--Javascript source-->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="assets/style/js/js.js"></script>
         <script type="text/javascript" src="assets/style/js/gauge.js"></script>
         <script type="text/javascript" src="assets/style/js/lineGraph.js"></script>

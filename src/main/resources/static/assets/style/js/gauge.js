@@ -38,32 +38,3 @@ function createGauge(){
 }
 
 createGauge();
-
-////Function for drawing speedmeter using google charts
-//function drawSpeedMeter(){
-//    
-//  var data = google.visualization.arrayToDataTable([
-//          ['Label', 'Value'],
-//          ['Capacity', 80]
-//        ]);
-//
-//        var options = {
-//            width: 600, height: 300,
-//            yellowFrom:75, yellowTo: 90,
-//            redFrom: 90, redTo: 100,
-//            minorTicks: 5
-//            
-//        };
-//
-//        var chart = new google.visualization.Gauge(document.getElementById('capacityMeter'));
-//
-//        chart.draw(data, options);
-//
-//        setInterval(function() {
-//          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-//          chart.draw(data, options);
-//        }, 10000);
-//}
-
-//google.charts.load('current', {packages: ['gauge']});
-//google.charts.setOnLoadCallback(drawSpeedMeter);
