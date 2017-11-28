@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 public class App {
 
-    @Bean 
+    @Bean
     public AreaManager areaManager(){
         AreaManager area =new BricAreaManager();
         return area;
