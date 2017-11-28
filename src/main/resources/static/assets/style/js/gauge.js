@@ -4,7 +4,7 @@ function createGauge(){
         bindto: '#capacityGauge',
         data: {
             columns: [
-                ['data', 91.4]
+                ['data', 10]
             ],
             type: 'gauge',
             onclick: function (d, i) { console.log("onclick", d, i); },
@@ -24,10 +24,10 @@ function createGauge(){
     //    width: 39 // for adjusting arc thickness
         },
         color: {
-            pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+            pattern: ['#60B044', '#F6C600', '#F97600', '#FF0000'], // the three color levels for the percentage values.
             threshold: {
     //            unit: 'value', // percentage is default
-    //            max: 200, // 100 is default
+    //            max: 100, // 100 is default
                 values: [30, 60, 90, 100]
             }
         },

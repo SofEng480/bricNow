@@ -22,4 +22,12 @@ public  interface AreaRepository extends JpaRepository<Area,Long>{
     @Query(value = "select * FROM bric_now WHERE id = ?1", nativeQuery = true)
     public Area getArea(int id);
 
+    @Query(value = "select * FROM BricInfo.bric_now\n" +
+            "group by area desc", nativeQuery = true)
+    public List<Area> getAllByArea();
+
+    @Query(value = "SELECT * FROM BricInfo.bric_now order by id DESC limit 12",nativeQuery = true)
+    public List<Area> getMostRecent();
+
+
 }

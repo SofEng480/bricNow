@@ -11,8 +11,8 @@ function drawMondayGraph(){
             x: 'Time',
             y: 'Person',
             columns: [
-                ['Time', 50, 100, 150, 200],
-                ['Person', 30, 200, 100, 300],
+                ['Time',6,8,10,12,14,16,18,20,22,24],
+                ['Person',50, 100, 150, 200,50, 100, 150, 200,25,5]
             ]
         }
     });    
@@ -31,7 +31,7 @@ function drawTuesdayGraph(){
             y: 'Person',
             columns: [
                 ['Time', 50, 100, 150, 200],
-                ['Person', 30, 200, 100, 300],
+                ['Person', 06, 200, 100, 300],
             ]
         }
     });    

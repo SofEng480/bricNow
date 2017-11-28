@@ -1,6 +1,8 @@
 package edu.csupomona.cs480.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.csupomona.cs480.Repo.AreaRepository;
 import edu.csupomona.cs480.data.Area;
@@ -48,16 +50,21 @@ public class WebController {
 //    public Area getArea(@PathVariable("id") Long id){
 //        return areaRepository.findOne(id);
 //    }
-//    @RequestMapping(value = "/areas/{time}" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/recent" ,method = RequestMethod.GET)
 //    @ResponseStatus(HttpStatus.OK)
-//    public int getAllAreas(@PathVariable("time") int lastUpdate){
-//        return areaRepository.findByUpdateIntandSum(lastUpdate);
-//    }
+    public Map<String,List<Area>> getRecent(){
+    	Map<String,List<Area>> map = new HashMap<String,List<Area>>();
+        map.put("areaPopulation",areaRepository.getMostRecent());
+    	return map;
+
+    }
     @RequestMapping(value = "/areas/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Area getSum(@PathVariable("id") int id){
         return areaRepository.getArea(id);
     }
+
+
 //	@RequestMapping(value = "/total", method = RequestMethod.GET)
 //	@ResponseStatus(HttpStatus.OK)
 //	public List<Area> getTotalValues(){
