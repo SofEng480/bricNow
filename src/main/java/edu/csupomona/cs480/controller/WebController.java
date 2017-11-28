@@ -56,8 +56,8 @@ public class WebController {
 //    public Area getArea(@PathVariable("id") Long id){
 //        return areaRepository.findOne(id);
 //    }
-    @RequestMapping(value = "bricnow.xyz" ,method = RequestMethod.GET)
-    public void getRecent() throws IOException {
+    @RequestMapping(value = "/recent" ,method = RequestMethod.GET)
+    public Map<String, List<Area>> getRecent() throws IOException {
     	Map<String,List<Area>> map = new HashMap<>();
         ObjectMapper JSON = new ObjectMapper();
         map.put("areaPopulation",areaRepository.getMostRecent());
@@ -65,8 +65,8 @@ public class WebController {
         FileWriter writer = new FileWriter(file);
         JSON.writeValue(file,map);
         writer.close();
+        return map;
     }
-    
     @RequestMapping(value = "/areas/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Area getSum(@PathVariable("id") int id){
