@@ -7,7 +7,7 @@ function setAreaData(){
     $.ajax({
         url: 'assets/data/bricNowData.json',
         dataType: 'json',
-        type: 'get',
+        type: 'GET',
         success: function(data){
             $.each(data, function(index, item){
                 $.each(item, function(key, value){
