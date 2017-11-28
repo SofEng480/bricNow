@@ -20,7 +20,7 @@ public class App {
      * This is a good example of how Spring instantiates
      * objects. The instances generated from this method
      * will be used in this project, where the Autowired
-     * annotation is applied.
+ 4    * annotation is applied.
      */
     @Bean
     public UserManager userManager() {

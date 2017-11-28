@@ -1,9 +1,13 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.csupomona.cs480.Repo.AreaRepository;
 import edu.csupomona.cs480.data.Area;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,8 @@ import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
+
+import static org.springframework.data.repository.init.ResourceReader.Type.JSON;
 
 
 /**
@@ -51,10 +57,16 @@ public class WebController {
 //        return areaRepository.findOne(id);
 //    }
     @RequestMapping(value = "/recent" ,method = RequestMethod.GET)
-//    @ResponseStatus(HttpStatus.OK)
-    public Map<String,List<Area>> getRecent(){
-    	Map<String,List<Area>> map = new HashMap<String,List<Area>>();
+    public Map<String,List<Area>> getRecent() throws IOException {
+    	Map<String,List<Area>> map = new HashMap<>();
+        ObjectMapper JSON = new ObjectMapper();
         map.put("areaPopulation",areaRepository.getMostRecent());
+
+
+        File file = new File("src/main/resources/static/assets/data/bricNowData.json");
+        FileWriter writer = new FileWriter(file);
+        JSON.writeValue(file,map);
+        writer.close();
     	return map;
 
     }
