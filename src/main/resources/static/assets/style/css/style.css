@@ -128,7 +128,12 @@ img.logoImage{
 }
 
 /*Style for horizontal tab which holds Bric Now and Bric Later button*/
-.horizontalTab{
+.horizontalTabButtonContainer{
+    display: flex;
+    display: -webkit-flex;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
     width: 100%;
     height: 80px;
     overflow: auto;
@@ -149,13 +154,14 @@ This holds the container for BRIC NOW and BRIC LATER*/
 /*Style for horizontal buttons
 ie. BRIC NOW and BRIC LATER buttons*/
 .horizontalTabButton{
+    text-align: center;  
     font-size: 1.5em;
     font-family: "Bookman", "Times New Roman", serif;
     background-color:yellow;
     cursor:pointer;
     padding:10px 10px;
     transition: 0.3s;
-    width: 35%;
+    width: 50%;
     height: 100%;
     border-radius: 30px;
 }
@@ -169,47 +175,43 @@ ie. BRIC NOW and BRIC LATER buttons*/
     background-color: gold;
 }
 
-/*Style for veritcal tab which holds days of the week button*/
-.verticalTab{
-    margin-top: 20px;
-    margin-right: 20px;
-    height: 100%;
-    width: 100%;
-    float: left;
-    display: inline;
-    display: flex;
-    display: -webkit-flex;    
+/*Style for BRIC Now tab*/
+#bricNow{
+    margin-left: 10px;
 }
 
-/*Style for vertical tab content
-This holds the container for BRIC LATER's 
-days of the week buttons*/
-.verticalTabContent{
-    width: 100%;
+/*Style for veritcal tab which holds days of the week button*/
+#bricLater{
+    display: flex;
+    display: -webkit-flex;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
     height: 100%;
-    font-size: 20px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-    float: left;
+    width: 100%;
+}
+
+/*Style for vertical buttons container*/
+.verticalTabButtonContainer{
+    border-bottom: 1px solid black;    
 }
 
 /*Style for vertical tab buttons
 ie. The days of the week*/
 .verticalTabButton{
     font-size: 1em;
-    width: 200px;
+    width: 180px;
     height: 80px;
-    display: block;
     background-color: white;
     color: black;
     padding: 10px 10px;
     border: 1px solid #ccc;
-    border-left: 0px;
-    outline: none;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-        border-radius: 30px;
+
+    margin-right: -4px;
 }
 
 /*Animation for vertical tab buttons*/
@@ -221,14 +223,14 @@ ie. The days of the week*/
     background-color: lightblue;
 }
 
-/*Style for graph container: holds graph title and the graph*/
+/*Style for vertical tab content
+This holds the container for BRIC LATER's 
+days of the week graph*/
 .graphContainer{
-    margin-left: 15px;
-}
-
-/*Style for BRIC Now tab*/
-#bricNow{
-    margin-left: 10px;
+    margin-top: 3%;
+    font-size: 20px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
 
 /*Horizontal tab animation effect*/

@@ -18,10 +18,10 @@ function openHorizontalTab(evt, tabName){
 
 //Function for switching vertical tabs, Monday-Sunday tabs in BricLater
 function openVerticalTab(evt, tabName){
-    var i, verticalTabContent, verticalTabButton;
-    verticalTabContent = document.getElementsByClassName("verticalTabContent");            
-    for(i=0; i<verticalTabContent.length; i++){
-        verticalTabContent[i].style.display="none";
+    var i, graphContainer, verticalTabButton;
+    graphContainer = document.getElementsByClassName("graphContainer");            
+    for(i=0; i<graphContainer.length; i++){
+        graphContainer[i].style.display="none";
     }
 
     verticalTabButton = document.getElementsByClassName("verticalTabButton");
