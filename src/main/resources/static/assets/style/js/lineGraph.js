@@ -10,7 +10,8 @@ function drawMondayGraph(){
             bindto: "#bricLaterMondayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });
@@ -27,7 +28,8 @@ function drawTuesdayGraph(){
             bindto: "#bricLaterTuesdayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });   
@@ -44,7 +46,8 @@ function drawWednesdayGraph(){
             bindto: "#bricLaterWednesdayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });    
@@ -61,7 +64,8 @@ function drawThursdayGraph(){
             bindto: "#bricLaterThursdayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });    
@@ -78,7 +82,8 @@ function drawFridayGraph(){
             bindto: "#bricLaterFridayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });      
@@ -95,7 +100,8 @@ function drawSaturdayGraph(){
             bindto: "#bricLaterSaturdayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });    
@@ -112,7 +118,8 @@ function drawSundayGraph(){
             bindto: "#bricLaterSundayGraph",
             data: {
                 json: externalData,
-                type:'line'
+                type:'line',
+                x: 'Time',
             }
         })  
     });      
