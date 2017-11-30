@@ -19,7 +19,6 @@ Running the Project Locally
 - http://localhost:8080/cs480/ping
 - http://localhost:8080/cs480/home
 
-
 Features
 ----------------------------------------
 -BricNow has two tabs for the user to choose from, Bric Now and Bric Later.  
@@ -30,5 +29,5 @@ Features
 -Bric Later has a tab for each day of the week. Clicking on a tab will display 
  a graph that plots the expected ocupancy of the BRIC over the course of the day.  
 -These graphs were formed using averages of our data over the course of eight
- weeks so the plot points are rougher than anticipated. 
+ weeks so the plot points are rougher than anticipated.  
 
