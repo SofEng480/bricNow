@@ -22,13 +22,13 @@ Running the Project Locally
 
 Features
 ----------------------------------------
--BricNow has two tabs for the user to choose from, Bric Now and Bric Later.\n
--Bric Now has a gauge that shows the percentage of the BRIC's total capacity.\n
+-BricNow has two tabs for the user to choose from, Bric Now and Bric Later.  
+-Bric Now has a gauge that shows the percentage of the BRIC's total capacity.  
 -Underneath it are the individual counts of various areas in the BRIC along with
  the time they were last updated
  
 -Bric Later has a tab for each day of the week. Clicking on a tab will display 
- a graph that plots the expected ocupancy of the BRIC over the course of the day.\n
+ a graph that plots the expected ocupancy of the BRIC over the course of the day.  
 -These graphs were formed using averages of our data over the course of eight
  weeks so the plot points are rougher than anticipated. 
 
